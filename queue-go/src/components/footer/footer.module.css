@@ -1,0 +1,17 @@
+.container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socialImages{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon{
+    opacity: 0.6;
+    cursor: pointer;
+}
