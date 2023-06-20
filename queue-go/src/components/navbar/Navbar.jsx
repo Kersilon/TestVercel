@@ -12,6 +12,11 @@ const links = [
     id:2,
     title:"Dashboard",
     url:"/dashboard",
+  },
+  {
+    id:3,
+    title:"QueueStatus",
+    url:"/queue",
   }
 ]
 
