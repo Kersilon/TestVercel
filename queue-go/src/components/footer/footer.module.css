@@ -5,6 +5,11 @@
     justify-content: space-between;
 }
 
+.copytext{
+    width:100vh;
+    font-size:small;
+}
+
 .socialImages{
     display: flex;
     align-items: center;
