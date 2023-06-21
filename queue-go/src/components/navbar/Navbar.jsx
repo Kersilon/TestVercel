@@ -23,6 +23,11 @@ const links = [
     id:4,
     title:"Contact",
     url:"/contact",
+  },
+  {
+    id:5,
+    title:"About",
+    url:"/about",
   }
 ]
 
