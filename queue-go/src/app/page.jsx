@@ -1,12 +1,24 @@
-import Navbar from "../components/navbar/Navbar";
-import Logo from "/public/Queue&GoLogoS.png";
-import Image from "next/image";
 import styles from "./homepage.module.css"
-import Button from '@/components/Button/Button'
 
 export default function index() {
   return (
-      <div className={styles.container}>
+    <div className={styles.body}>
+      <div className={styles.upperHalf}>
+        <div className="formContainer">
+          <form className="form" action="">
+            <input type="text" placeholder="Username" />
+            <input type="text"  placeholder="Password"/>
+            <button className='button' href="">login</button>
+          </form>
+        </div>
+        <p className={styles.betweenText}><strong className={styles.boldText}>--oppure--</strong>crea un nuovo account</p>
+      </div>
+      <div className={styles.links}>
+          <a className="button" href="/Registration"><p>Standard user</p></a>
+          <a className="button" href="/Registration"><p>Enterprise manager</p></a>
+      </div>
+    </div>
+      /*<div className={styles.container}>
           <div className={styles.item}>
             <h1 className={styles.title}>
               Queue&Go
@@ -19,6 +31,6 @@ export default function index() {
           <div className={styles.item}>
             <Image src={Logo} alt="Logo" className={styles.img}></Image>
           </div>
-      </div>
+      </div>*/
   )
 }

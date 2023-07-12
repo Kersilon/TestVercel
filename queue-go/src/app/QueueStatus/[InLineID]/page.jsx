@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./userInLine.module.css"
+import styles from "./InLineID.module.css"
 import Image from 'next/image'
 import Logo from "/public/Queue&GoLogoS.png"
 
@@ -7,7 +7,7 @@ const userInLine = ({params}) => {
     console.log(params)
   return (
     <div className={styles.container}>
-        <h1 className={styles.catTitle}>{params.category}</h1>
+        <h1 className={styles.catTitle}>{params.InLineID}</h1>
         <div className={styles.item}>
             <div className={styles.content}>
                 <h1 className={styles.title}>Test</h1>

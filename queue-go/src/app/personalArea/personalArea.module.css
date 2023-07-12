@@ -1,0 +1,15 @@
+.containerFeature{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature{
+    border: 1px green solid;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.feature img{
+    width: 100px;
+    height: auto;
+}

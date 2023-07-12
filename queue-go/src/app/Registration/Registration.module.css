@@ -1,0 +1,23 @@
+.form{
+    display: block;
+    width: 55%;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid green;
+}
+
+.formContainer{
+    text-align: center;
+}
+
+.form input{
+    margin: 5px;
+    outline: none;
+    border-radius: 3px;
+}
+
+.form input:focus{
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 3px solid green;
+}

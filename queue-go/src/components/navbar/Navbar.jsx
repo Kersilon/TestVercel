@@ -1,7 +1,8 @@
 "use client"
 import Link from "next/link"
 import styles from "./navbar.module.css"
-import DarkModeToggle from "../darkModeToggle/darkModeToggle"
+import Logo from "/public/Queue&GoLogoS.png";
+import Image from "next/image";
 
 const links = [
   {
@@ -10,19 +11,14 @@ const links = [
     url:"/",
   },
   {
-    id:2,
-    title:"Dashboard",
-    url:"/dashboard",
-  },
-  {
     id:3,
     title:"QueueStatus",
-    url:"/queue",
+    url:"/QueueStatus",
   },
   {
     id:4,
-    title:"Contact",
-    url:"/contact",
+    title:"QueueCreate",
+    url:"/QueueCreate"
   },
   {
     id:5,
@@ -34,22 +30,22 @@ const links = [
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.logo}>logo</Link>
+      <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
       <div className={styles.links}>
-        <DarkModeToggle/>
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))}
         <button 
-          className={styles.logout} 
+          className='button'
           onClick={() => {
             console.log("logged out");
           }}
         >
           Logout
         </button>
+        <a href="/personalArea"><img src="" alt="" />personalArea</a>
       </div>
     </div>
   )

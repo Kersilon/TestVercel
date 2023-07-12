@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.lineInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lineInfo button{
+    align-self: flex-start;
+}
+
+.infos{
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.info{
+    border: 5px solid green;
+    text-align: center;
+}
+
+.items{
+    width:auto;
+    overflow-x:scroll;
+    display: flex;
+}
+
+.item{
+    background: url("/Queue&GoLogoS.png");
+    background-size:cover;
+    width: 300px;
+    border: 5px solid green;
+    padding: 50px;
+    margin: 20px;
+
+    border-radius: 5%;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.item:hover .title{
+    color:green;
+}
