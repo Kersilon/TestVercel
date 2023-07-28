@@ -2,6 +2,51 @@ import React from 'react'
 import styles from "./QueueStatus.module.css"
 import Link from 'next/link'
 
+const path = "/QueueStatus/"
+
+const users = [
+  {
+    id:1,
+    name:"Mario",
+    surname:"Rossi",
+  },
+  {
+    id:2,
+    name:"Dante",
+    surname:"Sparda",
+  },
+  {
+    id:3,
+    name:"Virgilio",
+    surname:"Sparda",
+  },
+  {
+    id:4,
+    name:"Luigi",
+    surname:"Verdi",
+  },
+  {
+    id:5,
+    name:"Leonardo",
+    surname:"Rossi",
+  },
+  {
+    id:6,
+    name:"Francesco",
+    surname:"Marchetti",
+  },
+  {
+    id:7,
+    name:"Alessando",
+    surname:"Ferrari",
+  },
+  {
+    id:8,
+    name:"Lorenza",
+    surname:"Martini",
+  },
+]
+
 const queue = () => {
   return (
     <div className={styles.container}>
@@ -13,41 +58,15 @@ const queue = () => {
         <button className="button">Generate QR code</button>
       </div>
       <div className={styles.items}>
-        <Link href="/QueueStatus/utente1" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente2" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente3" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente1" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente2" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente3" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente1" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente2" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
-
-        <Link href="/queue/utente3" className={styles.item}>
-          <span className={styles.title}>idUtente</span>
-        </Link>
+        {
+          users.map(
+            (user) => (
+              <Link href={path+user.name+" "+user.surname} className={styles.item}>
+              <span className={styles.title}>{user.id} {user.name} {user.surname}</span>
+              </Link>
+            )
+          )
+        }
       </div>
     </div>
   )
