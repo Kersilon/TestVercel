@@ -1,6 +1,11 @@
 import React from 'react'
 import styles from "./QueueCreate.module.css"
 
+export const metadata = {
+  title: 'Queue Creation'
+}
+
+
 const createQueue = () => {
   return (
     <div className={styles.container}>

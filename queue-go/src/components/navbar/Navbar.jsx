@@ -28,10 +28,50 @@ const links = [
   }
 ]
 
+const linksUnlogged = [
+  {
+    id:1,
+    title:"Homepage",
+    url:"/",
+  },
+  {
+    id:3,
+    title:"Status Queue",
+    url:"/QueueStatus",
+  },
+  {
+    id:5,
+    title:"About",
+    url:"/about",
+  }
+]
+
 const Navbar = () => {
-
-
-  
+  var account = JSON.parse(localStorage.getItem('account'));
+  if(account == null) {
+    return (
+      <div className={styles.container}>
+      <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
+      <div className={styles.links}>
+        {linksUnlogged.map((link) => (
+          <Link key={link.id} href={link.url} className={styles.link}>
+            {link.title}
+          </Link>
+        ))} 
+        <div className={styles.navIcon}>
+        <a  href="/">
+          <Image
+          src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg"
+          width={29}
+          height={29}
+          alt="Personal Area"
+          />
+        </a>
+        </div>
+      </div>
+    </div>
+    )
+  } else {
   return (
     <div className={styles.container}>
       <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
@@ -41,6 +81,7 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
+    
         <button 
           className='button'
           onClick={() => {
@@ -63,6 +104,7 @@ const Navbar = () => {
       </div>
     </div>
   )
+  }
 }
 
 export default Navbar

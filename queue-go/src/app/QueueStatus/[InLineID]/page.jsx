@@ -3,6 +3,10 @@ import styles from "./InLineID.module.css"
 import Image from 'next/image'
 import Logo from "/public/Queue&GoLogoS.png"
 
+export const metadata = {
+    title: 'Queue Status'
+  }
+
 const userInLine = ({params}) => {
     console.log(params)
   return (

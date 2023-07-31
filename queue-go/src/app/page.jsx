@@ -3,6 +3,10 @@ import styles from "./homepage.module.css"
 import React, {useState, useEffect} from 'react'
 import { mockData } from "@/components/mockData";
 
+export const metadata = {
+  title: 'Homepage'
+}
+
 export default function index() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
