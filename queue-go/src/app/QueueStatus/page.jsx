@@ -58,11 +58,11 @@ const queue = () => {
           <h1 className={styles.info}>tempo di attesa medio</h1>
         </div>
         <button className="button">Generate QR code</button>
-
-        
-        <div class={styles.popup} onClick="placeholder">
-	        Click me to toggle the popup!
-          <span class={styles.popuptext} id="myPopup" onClick="placeholder">A Simple Popup!</span>
+        <div class={styles.popupContainer} id="myPopup" onClick="placeholder">
+          <img class={styles.popupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
+          <div class={styles.popupClose}>
+            <h5>X</h5>
+          </div>
         </div>
 
       </div>

@@ -50,30 +50,37 @@
 .item:hover .title{
     color:green;
 }
-
-.popup {
-    position: relative;
-    cursor: pointer;
-  }
   
   /* The actual popup */
-  .popup .popuptext {
+.popupContainer {
     visibility: hidden;
-    position: absolute;
-    width: 160px;
-    background-color: #555;
-    color: #fff;
+    position: fixed;
+    width: 60%;
+    background-color: dimgray;
     text-align: center;
-    padding: 8px 0;
+    bottom: 10%;
+    left: 20%;
+    padding: 10px 0;
     border-radius: 6px;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
+  }
+
+.popupImage{
+  width: 60%;
+  padding: 10px 0;
+}
+  
+.popupClose{
+    cursor: pointer;
+    width: 60px;
+    margin: auto;
+    border: 2px solid darkgreen;
+    border-radius: 50%;
+    background-color: darkgreen;
+    color: black;
   }
   
-  
   /* Toggle this class - hide and show the popup */
-  .popup .show {
+ .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
