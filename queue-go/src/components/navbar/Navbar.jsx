@@ -3,6 +3,7 @@ import Link from "next/link"
 import styles from "./navbar.module.css"
 import Logo from "/public/Queue&GoLogoS.png";
 import Image from 'next/image'
+import { mockData } from "@/components/mockData";
 
 const links = [
   {
@@ -28,6 +29,9 @@ const links = [
 ]
 
 const Navbar = () => {
+
+
+  
   return (
     <div className={styles.container}>
       <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
@@ -40,11 +44,12 @@ const Navbar = () => {
         <button 
           className='button'
           onClick={() => {
-            console.log("logged out");
+            localStorage.removeItem('account');
+            location.reload();
           }}
         >
           Logout
-        </button>
+        </button> 
         <div className={styles.navIcon}>
         <a  href="/personalArea">
           <Image
