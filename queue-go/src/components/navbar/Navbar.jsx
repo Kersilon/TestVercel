@@ -2,7 +2,7 @@
 import Link from "next/link"
 import styles from "./navbar.module.css"
 import Logo from "/public/Queue&GoLogoS.png";
-import Image from "next/image";
+import Image from 'next/image'
 
 const links = [
   {
@@ -12,12 +12,12 @@ const links = [
   },
   {
     id:3,
-    title:"QueueStatus",
+    title:"Status Queue",
     url:"/QueueStatus",
   },
   {
     id:4,
-    title:"QueueCreate",
+    title:"Crea Queue",
     url:"/QueueCreate"
   },
   {
@@ -45,7 +45,16 @@ const Navbar = () => {
         >
           Logout
         </button>
-        <a href="/personalArea"><img src="" alt="" />personalArea</a>
+        <div className={styles.navIcon}>
+        <a  href="/personalArea">
+          <Image
+          src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg"
+          width={29}
+          height={29}
+          alt="Personal Area"
+          />
+        </a>
+        </div>
       </div>
     </div>
   )

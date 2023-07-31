@@ -30,19 +30,21 @@
 }
 
 .item{
-    background: url("/Queue&GoLogoS.png");
+    background: url("https://icon-library.com/images/person-icon-outline/person-icon-outline-5.jpg");
     background-size:cover;
-    width: 300px;
+    width: 30px;
+    height: 30px;
     border: 5px solid green;
     padding: 50px;
     margin: 20px;
-
     border-radius: 5%;
+    text-align:justify;
 }
 
 .title{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
+    
 }
 
 .item:hover .title{
