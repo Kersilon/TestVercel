@@ -54,7 +54,7 @@
   /* The actual popup */
 .popupContainer {
   position: fixed;
-  visibility: visible;
+  visibility: hidden;
   width: 60%;
   background-color: dimgray;
   text-align: center;
