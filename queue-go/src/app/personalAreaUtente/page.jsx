@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./personalArea.module.css"
+import styles from "./personalAreaUtente.module.css"
 import Link from 'next/link'
 
 const personalArea= () => {
@@ -29,14 +29,14 @@ const personalArea= () => {
         <Link href="/">
           <div class={styles.feature}>
               <img src="https://m.media-amazon.com/images/G/29/x-locale/cs/help/images/gateway/self-service/YA_icon_Message_3._CB657833960_.png"/>
-            <div class={styles.featureText} >Cronologia queues</div>
+            <div class={styles.featureText} >Feedback inviati</div>
           </div>
         </Link>
 
         <Link href="/">
           <div class={styles.feature}>
               <img src="https://m.media-amazon.com/images/G/29/x-locale/cs/help/images/gateway/self-service/contact_us._CB659956575_.png"/>
-            <div class={styles.featureText} >Feedback clienti & Comunicazioni</div>
+            <div class={styles.featureText} >Supporto clienti</div>
           </div>
         </Link> 
         </div>
