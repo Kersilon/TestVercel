@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import styles from "./QueueStatus.module.css"
 import Link from 'next/link'
@@ -58,9 +60,9 @@ const queue = () => {
         <button className="button">Generate QR code</button>
 
         
-        <div class={styles.popup} onclick="myFunction()">
+        <div class={styles.popup} onClick="placeholder">
 	        Click me to toggle the popup!
-          <span class={styles.popuptext} id="myPopup">A Simple Popup!</span>
+          <span class={styles.popuptext} id="myPopup" onClick="placeholder">A Simple Popup!</span>
         </div>
 
       </div>
