@@ -60,9 +60,7 @@ const queue = () => {
         <button className="button">Generate QR code</button>
         <div class={styles.popupContainer} id="myPopup" onClick="placeholder">
           <img class={styles.popupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
-          <div class={styles.popupClose}>
-            <h5>X</h5>
-          </div>
+          <h2 class={styles.popupClose}>X</h2>
         </div>
 
       </div>

@@ -53,15 +53,15 @@
   
   /* The actual popup */
 .popupContainer {
-    visibility: hidden;
-    position: fixed;
-    width: 60%;
-    background-color: dimgray;
-    text-align: center;
-    bottom: 10%;
-    left: 20%;
-    padding: 10px 0;
-    border-radius: 6px;
+  position: fixed;
+  visibility: visible;
+  width: 60%;
+  background-color: dimgray;
+  text-align: center;
+  bottom: 10%;
+  left: 20%;
+  padding: 10px 0;
+  border-radius: 6px;
   }
 
 .popupImage{
@@ -70,13 +70,16 @@
 }
   
 .popupClose{
-    cursor: pointer;
-    width: 60px;
-    margin: auto;
+  /*
+    margin-left: 85%;
     border: 2px solid darkgreen;
     border-radius: 50%;
     background-color: darkgreen;
     color: black;
+    */
+    width: 20px;
+    margin: auto;
+    cursor: pointer;
   }
   
   /* Toggle this class - hide and show the popup */
