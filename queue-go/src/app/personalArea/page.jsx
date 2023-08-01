@@ -2,7 +2,6 @@
 import React from 'react'
 import styles from "./personalArea.module.css"
 import Link from 'next/link'
-import Head from 'next/head';
 
 export const metadata = {
   title: 'Personal Area'
@@ -37,7 +36,7 @@ const personalArea= () => {
               <div class={styles.featureText} >Cambio Informazioni Personali</div>
             </div>
           </Link>  
-          </div>
+          
 
           <Link href="/">
           <div class={styles.feature}>
@@ -52,6 +51,7 @@ const personalArea= () => {
             <div class={styles.featureText} >Supporto gestori & Feedback clienti</div>
           </div>
         </Link> 
+        </div>
       </div>
     )
   }
