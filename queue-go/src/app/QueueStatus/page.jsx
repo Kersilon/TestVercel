@@ -3,6 +3,7 @@
 import React from 'react'
 import styles from "./QueueStatus.module.css"
 import Link from 'next/link'
+import { useState } from 'react';
 
 const path = "/QueueStatus/"
 
@@ -50,6 +51,14 @@ const users = [
 ]
 
 const queue = () => {
+
+  const [userData, setUserData] = useState({
+    id: 0,
+    name: "placeholder",
+    surname: "placeholder",
+    visibility: "hidden"
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.lineInfo}>
@@ -58,8 +67,8 @@ const queue = () => {
           <h1 className={styles.info}>tempo di attesa medio</h1>
         </div>
         <button className="button">Generate QR code</button>
-        <div class={styles.popupContainer} id="qrCodeContainer" onClick="placeholder">
-          <img class={styles.popupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
+        <div className={"popupContainer" + " " + styles.qrPopupContainer} id="qrCodeContainer" onClick="placeholder">
+          <img class={styles.qrPopupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
           <h2 class={styles.popupClose}>X</h2>
         </div>
 
@@ -68,12 +77,18 @@ const queue = () => {
         {
           users.map(
             (user) => (
-              <Link href={path+user.name+" "+user.surname} className={styles.item}>
-              <span className={styles.title}>{user.id} {user.name} {user.surname}</span>
+              <Link href={""} className={styles.item}>
+              <div onClick={() => {setUserData({id: user.id, name: user.name, surname: user.surname, visibility:"visible"});}} className={styles.title}>{user.id} {user.name} {user.surname}</div>
               </Link>
             )
           )
         }
+      </div>
+      <div style={{visibility:`${userData.visibility}`}} className={"popupContainer" + " " + styles.userPopupContainer} id="userPopupContainer" onClick="placeholder">
+          <h1>{userData.id}</h1>
+          <h1>{userData.name}</h1>
+          <h1>{userData.surname}</h1>
+          <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={styles.popupClose}>X</h2>
       </div>
     </div>
   )
