@@ -53,7 +53,7 @@ const registration = ({params}) => {
                     <button className='button' href="" onClick={setNewAccountUtente}>Submit</button>
                 </form>
             </div>
-            <Link href="/"> Go back </Link>
+            <a className={styles.buttonReg} href="/"> Go back </a>
         </div>
         )   
     } else {
@@ -70,7 +70,7 @@ const registration = ({params}) => {
                     <button className='button' href="" onClick={setNewAccountAzienda}>Submit</button>
                 </form>
             </div>
-            <Link href="/"> Go back </Link>
+            <a className={styles.buttonReg} href="/"> Go back </a>
         </div>
         ) 
     }

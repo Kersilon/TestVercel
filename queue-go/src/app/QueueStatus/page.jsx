@@ -59,6 +59,8 @@ const queue = () => {
     visibility: "hidden"
   });
 
+  var account = JSON.parse(localStorage.getItem('account'));
+  if(account != null && account.tipo == 'azienda') {
   return (
     <div className={styles.container}>
       <div className={styles.lineInfo}>
@@ -71,7 +73,28 @@ const queue = () => {
           <img class={styles.qrPopupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
           <h2 class={styles.popupClose}>X</h2>
         </div>
-
+      </div>
+      <div className={styles.items}>
+        {
+          users.map(
+            (user) => (
+              <Link href={path+user.name+" "+user.surname} className={styles.item}>
+              <span className={styles.title}>{user.id} {user.name} {user.surname}</span>
+              </Link>
+            )
+          )
+        }
+      </div>
+    </div>
+  )
+}else{
+  return (
+    <div className={styles.container}>
+      <div className={styles.lineInfo}>
+        <div className={styles.infos}>
+          <h1 className={styles.info}>x persone in fila</h1>
+          <h1 className={styles.info}>tempo di attesa medio</h1>
+        </div>
       </div>
       <div className={styles.items}>
         {
@@ -92,6 +115,7 @@ const queue = () => {
       </div>
     </div>
   )
+}
 }
 
 export default queue

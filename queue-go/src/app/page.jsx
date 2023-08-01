@@ -10,18 +10,21 @@ export const metadata = {
 export default function index() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [tipo, setTipo] = useState("");
 
   //funzione che effettua la registrazione
   const LoginAccount = async () => {
     const account = {
       username : username,
       password : password,
+      tipo : null,
     };
     var ind;
-    mockData.forEach(function(item, index) {
-      if((item.username == account.username) && (item.password == account.password))
+    mockData.forEach(function(item, index) {    
+      if((item.username == account.username) && (item.password == account.password)){
+        account.tipo = item.tipo;
         ind = index;
-    });
+      }});
     if(ind <= mockData.length) {
       localStorage.setItem('account', JSON.stringify(account));
     } else {
@@ -32,7 +35,6 @@ export default function index() {
 
   //check dell'esistenza nella finestra delle variabili
   const account = JSON.parse(localStorage.getItem('account'));
-
 
   if (account != null) {
     return (
