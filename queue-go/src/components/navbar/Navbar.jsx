@@ -66,97 +66,34 @@ const linksCliente = [
 
 const Navbar = () => {
   var account = JSON.parse(localStorage.getItem('account'));
-  if(account == null) {
-    return (
+  var links = linksUnlogged;
+  
+  if (account != null && account.tipo == 'azienda'){
+    links = linksAzienda;
+    var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
+  
+  }else if(account !=null && account.tipo == 'utente'){
+    links = linksCliente;
+    var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
+  }
+  return (
       <div className={styles.container}>
       <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
       <div className={styles.links}>
-        {linksUnlogged.map((link) => (
+        {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))} 
+        {button}
         <div className={styles.navIcon}>
-        <a  href="/">
-          <Image
-          src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg"
-          width={29}
-          height={29}
-          alt="Personal Area"
-          />
-        </a>
-        </div>
-      </div>
-    </div>
-    )
-  
-  } else if(account.tipo === 'azienda') {
-  return (
-    <div className={styles.container}>
-      <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
-      <div className={styles.links}>
-        {linksAzienda.map((link) => (
-          <Link key={link.id} href={link.url} className={styles.link}>
-            {link.title}
-          </Link>
-        ))}
-    
-        <button 
-          className='button'
-          onClick={() => {
-            localStorage.removeItem('account');
-            location.reload();
-          }}
-        >
-          Logout
-        </button> 
-        <div className={styles.navIcon}>
-        <a  href="/personalArea">
-          <Image
-          src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg"
-          width={29}
-          height={29}
-          alt="Personal Area"
-          />
-        </a>
+           <a  href="/personalArea">
+             <Image src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg" width={29} height={29} alt="Personal Area" />
+          </a>
         </div>
       </div>
     </div>
   )
-  } else if(account.tipo === "utente") {
-  return (
-    <div className={styles.container}>
-      <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
-      <div className={styles.links}>
-        {linksCliente.map((link) => (
-          <Link key={link.id} href={link.url} className={styles.link}>
-            {link.title}
-          </Link>
-        ))}
-    
-        <button 
-          className='button'
-          onClick={() => {
-            localStorage.removeItem('account');
-            location.reload();
-          }}
-        >
-          Logout
-        </button> 
-        <div className={styles.navIcon}>
-        <a  href="/personalAreaUtente">
-          <Image
-          src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg"
-          width={29}
-          height={29}
-          alt="Personal Area"
-          />
-        </a>
-        </div>
-      </div>
-    </div>
-  )
-  }
 }
 
 export default Navbar
