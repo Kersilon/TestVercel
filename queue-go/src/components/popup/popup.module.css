@@ -1,0 +1,14 @@
+.qrPopupContainer{
+    visibility: hidden;
+    width: 60%;
+  }
+
+  .qrPopupContainer img{
+    width: 60%;
+    padding: 10px 0;
+  }
+
+  .qrPopupImage{
+    width: 60%;
+    padding: 10px 0;
+  }

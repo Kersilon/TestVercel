@@ -86,7 +86,6 @@ const queue = ({params}) => {
     <div className={styles.container}>
       <div className={styles.lineInfo}>
         <div className={styles.infos}>
-          
           <h1 className={styles.info}>Nome della coda: {codaScelta.nome}</h1>
           <h1 className={styles.info}>x persone in fila</h1>
           <h1 className={styles.info}>tempo di attesa medio</h1>
