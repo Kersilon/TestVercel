@@ -4,6 +4,8 @@ import React from 'react'
 import styles from "./QueueStatus.module.css"
 import Link from 'next/link'
 import { useState } from 'react';
+import { mockData } from '@/components/mockData';
+import { mockDataCode } from '@/components/mockDataCode';
 
 const path = "/QueueStatus/"
 
@@ -50,7 +52,9 @@ const users = [
   },
 ]
 
-const queue = () => {
+const queue = ({params}) => {
+  var codaScelta = mockDataCode.find(coda => coda.id == params.IDQueue);
+
 
   const [userData, setUserData] = useState({
     id: 0,
@@ -82,6 +86,8 @@ const queue = () => {
     <div className={styles.container}>
       <div className={styles.lineInfo}>
         <div className={styles.infos}>
+          
+          <h1 className={styles.info}>Nome della coda: {codaScelta.nome}</h1>
           <h1 className={styles.info}>x persone in fila</h1>
           <h1 className={styles.info}>tempo di attesa medio</h1>
         </div>
@@ -90,12 +96,16 @@ const queue = () => {
       </div>
       <div className={styles.items}>
         {
-          users.map(
-            (user) => (
-              <Link href={""} className={styles.item}>
-              <div onClick={() => {setUserData({id: user.id, name: user.name, surname: user.surname, visibility:"visible"});}} className={styles.title}>{user.id} {user.name} {user.surname}</div>
-              </Link>
-            )
+          codaScelta.listaPersone.map(
+            (idUser) => {
+              var user = mockData.find(user => user.id == idUser);
+              console.log(user);
+              return (
+                <Link href={""} className={styles.item}>
+                <div onClick={() => {setUserData({id: user.id, name: user.username, visibility:"visible"});}} className={styles.title}>{user.id} {user.username}</div>
+                </Link>
+              )
+            }
           )
         }
       </div>
