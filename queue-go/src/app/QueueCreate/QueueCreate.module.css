@@ -13,3 +13,14 @@
     width: 50%;
     margin: 5px;
 }
+
+.personalizedPopupContainer{
+}
+
+.personalizedPopupContainer form{
+    text-align: left;
+    padding: 20px;
+}
+.personalizedPopupContainer label {
+    padding-left: 10px;
+}

@@ -64,3 +64,9 @@ a{
   background-color: dimgray;
   text-align: center;
   }
+
+  .popupClose{
+    width: 20px;
+    margin: auto;
+    cursor: pointer;
+  }

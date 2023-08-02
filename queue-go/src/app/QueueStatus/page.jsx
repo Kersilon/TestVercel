@@ -64,7 +64,20 @@ const queue = () => {
   })
 
   var account = JSON.parse(localStorage.getItem('account'));
+  var qrCodeButton;
+  var qrCodePopup;
+
   if(account != null && account.tipo == 'azienda') {
+    var qrCodeButton = <button onClick={() => {setQrCodeIsVisible({visibility:"visible"});}} className="button">Generate QR code</button>;
+    var qrCodePopup = 
+    <div style={{visibility:`${qrCodeIsVisible.visibility}`}} className={"popupContainer" + " " + styles.qrPopupContainer} id="qrCodeContainer">
+      <img class={styles.qrPopupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
+      <h2 onClick={() => {setQrCodeIsVisible({visibility:"hidden"});}} class={"popupClose"}>X</h2>
+    </div>;
+  }else{
+
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.lineInfo}>
@@ -72,11 +85,8 @@ const queue = () => {
           <h1 className={styles.info}>x persone in fila</h1>
           <h1 className={styles.info}>tempo di attesa medio</h1>
         </div>
-        <button onClick={() => {setQrCodeIsVisible({visibility:"visible"});}} className="button">Generate QR code</button>
-        <div style={{visibility:`${qrCodeIsVisible.visibility}`}} className={"popupContainer" + " " + styles.qrPopupContainer} id="qrCodeContainer">
-          <img class={styles.qrPopupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
-          <h2 onClick={() => {setQrCodeIsVisible({visibility:"hidden"});}} class={styles.popupClose}>X</h2>
-        </div>
+        {qrCodeButton}
+        {qrCodePopup}
       </div>
       <div className={styles.items}>
         {
@@ -93,39 +103,10 @@ const queue = () => {
           <h1>{userData.id}</h1>
           <h1>{userData.name}</h1>
           <h1>{userData.surname}</h1>
-          <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={styles.popupClose}>X</h2>
+          <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={"popupClose"}>X</h2>
       </div>
     </div>
   )
-}else{
-  return (
-    <div className={styles.container}>
-      <div className={styles.lineInfo}>
-        <div className={styles.infos}>
-          <h1 className={styles.info}>x persone in fila</h1>
-          <h1 className={styles.info}>tempo di attesa medio</h1>
-        </div>
-      </div>
-      <div className={styles.items}>
-        {
-          users.map(
-            (user) => (
-              <Link href={""} className={styles.item}>
-              <div onClick={() => {setUserData({id: user.id, name: user.name, surname: user.surname, visibility:"visible"});}} className={styles.title}>{user.id} {user.name} {user.surname}</div>
-              </Link>
-            )
-          )
-        }
-      </div>
-      <div style={{visibility:`${userData.visibility}`}} className={"popupContainer" + " " + styles.userPopupContainer} id="userPopupContainer">
-          <h1>{userData.id}</h1>
-          <h1>{userData.name}</h1>
-          <h1>{userData.surname}</h1>
-          <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={styles.popupClose}>X</h2>
-      </div>
-    </div>
-  )
-}
 }
 
 export default queue
