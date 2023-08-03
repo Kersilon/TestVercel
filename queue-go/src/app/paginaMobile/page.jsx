@@ -1,13 +1,30 @@
+"use client"
+
 import React from 'react'
 import styles from "./paginaMobile.module.css"
 import Link from 'next/link'
+import { useState } from 'react'
 
 const paginaMobile= () => {
 
+  const [isClosed, setIsClosed] = useState(false)
+
+  function closePopup() {
+    setIsClosed(false);
+  }
+
+  function openPopup() {
+    setIsClosed(true);
+  }
+
+  var qrCodePopup = 
+  <div className={"popupContainer" + " " + styles.cameraPopupContainer} id="qrCodeContainer">
+    <div className={styles.placeholderCamera}>Camera</div>
+    <h2 onClick={closePopup} class={"popupClose"}>X</h2>
+  </div>;
 
   return (
     <div>
-
         <div class={styles.centeredTitle}>
           <h2>Entra nella fila nei seguenti modi</h2>
         </div>
@@ -23,8 +40,9 @@ const paginaMobile= () => {
         
        
           <div class={styles.centeredFunctions}>
-          <Link href="/"> <img class={styles.imag} src="https://www.bew-web-agency.fr/wp-content/uploads/2022/03/qr-code-g494f94760_1280.png"/> </Link>
+          <Link href=""> <img onClick={openPopup} class={styles.imag} src="https://www.bew-web-agency.fr/wp-content/uploads/2022/03/qr-code-g494f94760_1280.png"/> </Link>
             <div >Scansiona QR</div>
+            {isClosed && qrCodePopup}
           </div>
           </div>
           </div>

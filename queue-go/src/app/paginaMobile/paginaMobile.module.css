@@ -24,5 +24,17 @@
     padding:5px;
     margin-left:12%;
   }
+
+  .cameraPopupContainer{
+    width: 30%;
+    height: 50%;
+  }
+
+  .placeholderCamera{
+    width: 90%;
+    height: 90%;
+    border: 1px solid blanchedalmond;
+    margin: auto;
+  }
   
   

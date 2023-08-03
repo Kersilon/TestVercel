@@ -73,10 +73,6 @@ const queue = ({params}) => {
       setIsClosed(true);
     }
 
-
-
-
-
   var account = JSON.parse(localStorage.getItem('account'));
   var qrCodeButton;
   var qrCodePopup;
