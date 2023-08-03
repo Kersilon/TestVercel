@@ -1,19 +1,27 @@
 import React, {useState, useEffect} from 'react'
 import styles from "./popup.module.css"
 
-const Popup = ({children}) => {
-    const [popupIsVisible, setpopupIsVisible] = useState({
-        visibility: "hidden"
-      })
+const [isClosed, setIsClosed] = useState(false)
+
+function closePopup() {
+  setIsClosed(false);
+}
+
+function openPopup() {
+  setIsClosed(true);
+}
+const Popup = (children) => {
+
+    var popup =
+        <div className={"popupContainer" + " " + styles.qrPopupContainer}>
+            {children}
+        <h2 onClick={closePopup} class={"popupClose"}>X</h2>
+        </div>;
 
     return (
         <div>
-            <button onClick={() => {setpopupIsVisible({visibility:"visible"});}} className="button">Generate QR code</button>
-
-            <div style={{visibility:`${popupIsVisible.visibility}`}} className={"popupContainer" + " " + styles.qrPopupContainer}>
-                {children}
-            <h2 onClick={() => {setpopupIsVisible({visibility:"hidden"});}} class={"popupClose"}>X</h2>
-        </div>
+            <button onClick={openPopup} className="button">Generate QR code</button>
+            {isClosed && popup}
         </div>
         
     )

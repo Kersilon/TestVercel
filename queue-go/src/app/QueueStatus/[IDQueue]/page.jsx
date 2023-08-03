@@ -62,22 +62,35 @@ const queue = ({params}) => {
     surname: "placeholder",
     visibility: "hidden"
   });
+  
+   const [isClosed, setIsClosed] = useState(false)
 
-  const [qrCodeIsVisible, setQrCodeIsVisible] = useState({
-    visibility: "hidden"
-  })
+    function closePopup() {
+      setIsClosed(false);
+    }
+
+    function openPopup() {
+      setIsClosed(true);
+    }
+
+
+
+
 
   var account = JSON.parse(localStorage.getItem('account'));
   var qrCodeButton;
   var qrCodePopup;
 
   if(account != null && account.tipo == 'azienda') {
-    var qrCodeButton = <button onClick={() => {setQrCodeIsVisible({visibility:"visible"});}} className="button">Generate QR code</button>;
+    var qrCodeButton = <button onClick={openPopup} className="button">Generate QR code</button>;
+
     var qrCodePopup = 
-    <div style={{visibility:`${qrCodeIsVisible.visibility}`}} className={"popupContainer" + " " + styles.qrPopupContainer} id="qrCodeContainer">
+    <div className={"popupContainer" + " " + styles.qrPopupContainer} id="qrCodeContainer">
       <img class={styles.qrPopupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
-      <h2 onClick={() => {setQrCodeIsVisible({visibility:"hidden"});}} class={"popupClose"}>X</h2>
+      <h2 onClick={closePopup} class={"popupClose"}>X</h2>
     </div>;
+
+
   }else{
 
   }
@@ -91,7 +104,7 @@ const queue = ({params}) => {
           <h1 className={styles.info}>tempo di attesa medio</h1>
         </div>
         {qrCodeButton}
-        {qrCodePopup}
+        {isClosed && qrCodePopup}
       </div>
       <div className={styles.items}>
         {

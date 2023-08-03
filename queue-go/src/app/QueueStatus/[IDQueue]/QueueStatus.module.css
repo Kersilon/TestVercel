@@ -52,7 +52,7 @@
 }
 
   .qrPopupContainer{
-    visibility: hidden;
+    visibility: visible;
     width: 60%;
   }
 
