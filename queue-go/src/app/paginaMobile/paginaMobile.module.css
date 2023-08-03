@@ -1,0 +1,28 @@
+.centeredTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size-adjust: inherit;
+  }
+
+  .centeredContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centeredDivs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 22%;
+  }
+
+  .imag {
+    height: 70px;
+    width: 70px;
+    padding:5px;
+    margin-left:12%;
+  }
+  
+  

@@ -12,11 +12,6 @@ const linksAzienda = [
     url:"/",
   },
   {
-    id:3,
-    title:"Status Queue",
-    url:"/QueueStatus",
-  },
-  {
     id:4,
     title:"Crea Queue",
     url:"/QueueCreate"
@@ -35,34 +30,12 @@ const linksUnlogged = [
     url:"/",
   },
   {
-    id:3,
-    title:"Status Queue",
-    url:"/QueueStatus",
-  },
-  {
     id:5,
     title:"About",
     url:"/about",
   }
 ]
 
-const linksCliente = [
-  {
-    id:1,
-    title:"Homepage",
-    url:"/",
-  },
-  {
-    id:3,
-    title:"Status Queue",
-    url:"/QueueStatus",
-  },
-  {
-    id:5,
-    title:"About",
-    url:"/about",
-  }
-]
 
 const Navbar = () => {
   var account = JSON.parse(localStorage.getItem('account'));
@@ -73,7 +46,6 @@ const Navbar = () => {
     var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
   
   }else if(account !=null && account.tipo == 'utente'){
-    links = linksCliente;
     var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
   }
   return (
@@ -85,6 +57,11 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))} 
+        <div className={styles.desktopOnly}>
+        <Link href="/paginaMobile" className={styles.link}>
+            Trova servizio
+        </Link>
+        </div>
         {button}
         <div className={styles.navIcon}>
            <a  href="/personalArea">
