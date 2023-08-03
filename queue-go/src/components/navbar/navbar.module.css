@@ -28,3 +28,13 @@
 .navIcon{
     margin-top : 3px;
 }
+
+.desktopOnly {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .desktopOnly {
+      display: block;
+    }
+  }
