@@ -11,13 +11,20 @@ const linksAzienda = [
     title:"Homepage",
     url:"/",
   },
+
   {
-    id:4,
-    title:"Crea Queue",
+    id:2,
+    title:"Check Queue",
+    url:"/QueueStatus/1"
+  },
+
+  {
+    id:3,
+    title:"New Queue",
     url:"/QueueCreate"
   },
   {
-    id:5,
+    id:4,
     title:"About",
     url:"/about",
   }
@@ -29,8 +36,21 @@ const linksUnlogged = [
     title:"Homepage",
     url:"/",
   },
+
   {
-    id:5,
+    id:2,
+    title:"Join Queue",
+    url:"/paginaMobile"
+  },
+
+  {
+    id:3,
+    title:"Check Queue",
+    url:"/QueueStatus/1"
+  },
+
+  {
+    id:4,
     title:"About",
     url:"/about",
   }
@@ -50,25 +70,25 @@ const Navbar = () => {
   }
   return (
       <div className={styles.container}>
-      <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
-      <div className={styles.links}>
-        {links.map((link) => (
-          <Link key={link.id} href={link.url} className={styles.link}>
-            {link.title}
-          </Link>
-        ))} 
-        <div className={styles.desktopOnly}>
-        <Link href="/paginaMobile" className={styles.link}>
-            Trova servizio
-        </Link>
+        <a href="/"><img className={styles.logo} src="/Queue&GoLogoS.png" alt="" /></a>
+        <div className={styles.links}>
+          {links.map((link) => (
+            <Link key={link.id} href={link.url} className={styles.link}>
+              {link.title}
+            </Link>
+          ))} 
+          <div className={styles.desktopOnly}>
+            <Link href="/paginaMobile" className={styles.link}>
+                Trova servizio
+            </Link>
+          </div>
+          {button}
+          <div className={styles.navIcon}>
+            <a  href="/personalArea">
+              <Image src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg" width={29} height={29} alt="Personal Area" />
+            </a>
+          </div>
         </div>
-        {button}
-        <div className={styles.navIcon}>
-           <a  href="/personalArea">
-             <Image src="https://icon-library.com/images/profile-icon-white/profile-icon-white-3.jpg" width={29} height={29} alt="Personal Area" />
-          </a>
-        </div>
-      </div>
     </div>
   )
 }
