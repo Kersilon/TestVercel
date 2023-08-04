@@ -2,6 +2,7 @@
 import styles from "./homepage.module.css"
 import React, {useState, useEffect} from 'react'
 import { mockData } from "@/components/mockData";
+import { useRouter } from 'next/navigation';
 
 export const metadata = {
   title: 'Homepage'
@@ -11,6 +12,7 @@ export default function index() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [tipo, setTipo] = useState("");
+  const router = useRouter();
 
   //funzione che effettua la registrazione
   const LoginAccount = async () => {
@@ -40,7 +42,7 @@ export default function index() {
     return (
       <div className={styles.body}>
         <div className={styles.upperHalf}>
-          Accesso già effettuato! Ora puoi accedere ad una coda o visualizzare le tue informazioni personali
+          {router.push('/personalArea')}
         </div>
       </div>
     )
@@ -52,7 +54,7 @@ export default function index() {
             <form className="form" >
               <input type="text" placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)}/>
               <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)}/>
-              <button className='button' type="submit" href="/" onClick={LoginAccount}>
+              <button className='button' type="submit" href="/personalArea" onClick={LoginAccount}>
                 Login
               </button>
             </form>

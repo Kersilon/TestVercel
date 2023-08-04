@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from "./personalArea.module.css"
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export const metadata = {
   title: 'Personal Area'
@@ -9,17 +10,18 @@ export const metadata = {
 
 const personalArea= () => {
   var account = JSON.parse(localStorage.getItem('account'));
+  const router = useRouter();
 
   if(account == null) {
     return (
       <div className={styles.container}>
-          Non sei registrato.
+          {router.push('/')}
       </div>
     )
   } else if(account.tipo == 'azienda') {
     return (
       <div className={styles.container}>
-          <div className={styles.containerTitle}>
+          <div className={styles.title}>
             <h1>Area Personale</h1>
           </div>
           <div className={styles.containerFeature}>
@@ -57,7 +59,7 @@ const personalArea= () => {
   } else if(account.tipo == 'utente') {
    return (
     <div className={styles.container}>
-        <div className={styles.containerTitle}>
+        <div className={styles.title}>
           <h1>Area Personale</h1>
         </div>
         <div className={styles.containerFeature}>

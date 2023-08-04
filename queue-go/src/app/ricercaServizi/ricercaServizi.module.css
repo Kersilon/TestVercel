@@ -1,0 +1,43 @@
+.serviziContainer {
+  width: 100%;
+  max-width: 600px; 
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: -115px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  width: 90%;
+  padding: 10px;
+  margin-left: 3%;
+  border-radius: 25px; 
+  border: 1px solid #ccc;
+}
+
+.serviziList {
+  list-style: none;
+  padding: 0;
+}
+
+.servizioItem {
+  margin: 11px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.showMore {
+  width: 150px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 25px;
+}

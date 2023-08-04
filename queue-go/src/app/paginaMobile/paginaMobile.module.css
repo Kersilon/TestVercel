@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center; 
     font-size-adjust: inherit;
+    margin-top: -115px;
   }
 
   .centeredContainer {
@@ -36,5 +37,7 @@
     border: 1px solid blanchedalmond;
     margin: auto;
   }
+
+  
   
   
