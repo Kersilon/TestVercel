@@ -53,6 +53,17 @@ const users = [
 ]
 
 const queue = ({params}) => {
+
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsButtonClicked(true);
+  };
+
+  const handleSecondClick = () => {
+    setIsButtonClicked(false);
+  };
+
   var codaScelta = mockDataCode.find(coda => coda.id == params.IDQueue);
 
 
@@ -123,7 +134,15 @@ const queue = ({params}) => {
           <h1>{userData.surname}</h1>
           <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={"popupClose"}>X</h2>
       </div>
-    </div>
+      <div className={styles.buttonContainer}>
+      <a href="/ricercaServizi"><button  className={styles.buttonJoin}>Go back</button></a>
+        {isButtonClicked ? (
+        <button className={styles.buttonJoin} onClick={handleSecondClick} >Exit queue</button>
+        ) : (
+         <button className={styles.buttonJoin} onClick={handleClick}>Join queue</button>
+        )}
+      </div>
+  </div>      
   )
 }
 

@@ -10,7 +10,7 @@ const registration = ({params}) => {
   const [password, setPassword] = useState("");
   const account = JSON.parse(localStorage.getItem('account'));
   const router = useRouter();
-
+  
   const payload = {
     username : username,
     password : password,

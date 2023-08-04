@@ -65,3 +65,26 @@
   width: 60%;
   padding: 10px 0;
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 83%;
+    margin-left: 33.5%;
+}
+
+.buttonJoin{
+  padding: 5px;
+  cursor: pointer;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 45px;
+  width: 100px;
+  margin: 0 5px;
+  }
+
+
