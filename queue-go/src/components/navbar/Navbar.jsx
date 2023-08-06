@@ -48,10 +48,10 @@ const linksUnlogged = [
 const Navbar = () => {
   var account = JSON.parse(localStorage.getItem('account'));
   var links = linksUnlogged;
-  
+  var button = "";
   if (account != null && account.tipo == 'azienda'){
     links = linksAzienda;
-    var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
+    var button = <> <Link key='11' href="/QueueStatus/1" idSceltoclassName={styles.link}> Check Queue </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button></>
   
   }else if(account !=null && account.tipo == 'utente'){
     var button = <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button> 

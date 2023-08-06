@@ -72,13 +72,21 @@ const queue = ({params}) => {
       <img class={styles.qrPopupImage} src="https://i.redd.it/r72kvnykeui41.png" alt="Qr code" />
       <h2 onClick={closePopup} class={"popupClose"}>X</h2>
     </div>;
-
-
-  }else{
-
   }
 
+  var buttonCorretto;
+  if((localStorage.getItem('joinQueue') == codaScelta.id)) {
+    buttonCorretto = <button className={styles.buttonJoin} onClick={handleExit} >Exit queue</button>;
+  } else {
+    buttonCorretto = <button className={styles.buttonJoin} onClick={handleJoin} >Join queue (uscendo da quella corrente)</button>;
+  }
 
+  var buttonUtente;
+  if((account != null ) && (account.tipo == "utente")){
+    buttonUtente = <button className={styles.buttonJoin} onClick={handleJoin}>Join queue</button>
+  } else {
+    buttonUtente = ""
+  }
 
   return (
     <div className={styles.container}>
@@ -111,9 +119,9 @@ const queue = ({params}) => {
       <div className={styles.buttonContainer}>
       <a href="/ricercaServizi"><button  className={styles.buttonJoin}>Go back</button></a>
         {(localStorage.getItem('joinQueue') == null) ? (
-          <button className={styles.buttonJoin} onClick={handleJoin}>Join queue</button>
+          buttonUtente
         ) : (
-          <button className={styles.buttonJoin} onClick={handleExit} >Exit queue</button>
+          buttonCorretto
         )}
       </div>
   </div>      
