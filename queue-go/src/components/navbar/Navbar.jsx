@@ -14,17 +14,11 @@ const linksAzienda = [
 
   {
     id:2,
-    title:"Check Queue",
-    url:"/QueueStatus/1"
-  },
-
-  {
-    id:3,
     title:"New Queue",
     url:"/QueueCreate"
   },
   {
-    id:4,
+    id:3,
     title:"About",
     url:"/about",
   }
@@ -45,12 +39,6 @@ const linksUnlogged = [
 
   {
     id:3,
-    title:"Check Queue",
-    url:"/QueueStatus/1"
-  },
-
-  {
-    id:4,
     title:"About",
     url:"/about",
   }
@@ -66,7 +54,12 @@ const Navbar = () => {
     var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
   
   }else if(account !=null && account.tipo == 'utente'){
-    var button = <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button> 
+    var button = <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button> 
+  }
+  if(localStorage.getItem('joinQueue') != null) {
+    var idScelto = localStorage.getItem('joinQueue')
+    var stringa = "/QueueStatus/" + idScelto
+    var buttonCoda = <Link key='9' href={stringa} className={styles.link}> Check Queue </Link>
   }
   return (
       <div className={styles.container}>
@@ -82,6 +75,7 @@ const Navbar = () => {
                 Trova servizio
             </Link>
           </div>
+          {buttonCoda}
           {button}
           <div className={styles.navIcon}>
             <a  href="/personalArea">

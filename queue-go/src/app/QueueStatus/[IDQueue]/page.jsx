@@ -9,62 +9,21 @@ import { mockDataCode } from '@/components/mockDataCode';
 
 const path = "/QueueStatus/"
 
-const users = [
-  {
-    id:1,
-    name:"Mario",
-    surname:"Rossi",
-  },
-  {
-    id:2,
-    name:"Dante",
-    surname:"Sparda",
-  },
-  {
-    id:3,
-    name:"Virgilio",
-    surname:"Sparda",
-  },
-  {
-    id:4,
-    name:"Luigi",
-    surname:"Verdi",
-  },
-  {
-    id:5,
-    name:"Leonardo",
-    surname:"Rossi",
-  },
-  {
-    id:6,
-    name:"Francesco",
-    surname:"Marchetti",
-  },
-  {
-    id:7,
-    name:"Alessando",
-    surname:"Ferrari",
-  },
-  {
-    id:8,
-    name:"Lorenza",
-    surname:"Martini",
-  },
-]
 
 const queue = ({params}) => {
+ var codaScelta = mockDataCode.find(coda => coda.id == params.IDQueue);
 
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsButtonClicked(true);
+  const handleJoin = () => {
+    localStorage.setItem('joinQueue', codaScelta.id);
+    location.reload();
   };
 
-  const handleSecondClick = () => {
-    setIsButtonClicked(false);
+  const handleExit = () => {
+    localStorage.removeItem('joinQueue')
+    location.reload();
   };
 
-  var codaScelta = mockDataCode.find(coda => coda.id == params.IDQueue);
+ 
 
 
   const [userData, setUserData] = useState({
@@ -102,6 +61,8 @@ const queue = ({params}) => {
 
   }
 
+
+
   return (
     <div className={styles.container}>
       <div className={styles.lineInfo}>
@@ -136,10 +97,10 @@ const queue = ({params}) => {
       </div>
       <div className={styles.buttonContainer}>
       <a href="/ricercaServizi"><button  className={styles.buttonJoin}>Go back</button></a>
-        {isButtonClicked ? (
-        <button className={styles.buttonJoin} onClick={handleSecondClick} >Exit queue</button>
+        {(localStorage.getItem('joinQueue') == null) ? (
+          <button className={styles.buttonJoin} onClick={handleJoin}>Join queue</button>
         ) : (
-         <button className={styles.buttonJoin} onClick={handleClick}>Join queue</button>
+          <button className={styles.buttonJoin} onClick={handleExit} >Exit queue</button>
         )}
       </div>
   </div>      
