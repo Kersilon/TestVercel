@@ -1,20 +1,35 @@
 export const mockData = [
     {
       id: 1,
-      username: "Simone",
-      password: "Scermino",
+      username: "SimScerm",
+      password: "ScerminoSim",
+      name: "Simone",
+      surname: "Scermino",
+      phoneNumber: "3332221111",
+      taxIDCode:"",
+      bussAddress:"",
       tipo: "utente"
     },
     {
       id: 2,
-      username: "Roberto",
-      password: "Miron",
+      username: "RobMir",
+      password: "MironRob",
+      name: "Roberto Andrei",
+      surname: "Miron",
+      phoneNumber: "2221113333",
+      taxIDCode:"",
+      bussAddress:"",
       tipo: "utente"
     },
     {
         id: 3,
-        username: "Ersilio",
-        password: "Petretta",
+        username: "ErsPet",
+        password: "PetrettaErs",
+        name: "Ersilio",
+        surname: "Petretta",
+        phoneNumber: "",
+        taxIDCode:"CodiceTax",
+        bussAddress:"AddressBus",
         tipo: "azienda"
     },
   ];
