@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useState } from 'react';
 import { mockData } from '@/components/mockData';
 import { mockDataCode } from '@/components/mockDataCode';
+import { mockDataUsersInLine } from '@/components/mockDataUsersInLine';
 
 const path = "/QueueStatus/"
 
@@ -43,6 +44,22 @@ const queue = ({params}) => {
       setIsClosed(true);
     }
 
+    function usersInLine(){
+    var users = [];
+
+    for (let index = 1; index <= codaScelta.listaPersone; index++) {
+      var user = mockDataUsersInLine.find(user => user.id == index);
+      console.log(user);
+      users.push(
+        <Link href={""} className={styles.item}>
+        <div onClick={() => {setUserData({id: user.id, name: user.name, surname: user.surname, visibility:"visible"});}} className={styles.title}>{user.id} {user.name} {user.surname}</div>
+        </Link>
+      )
+    }
+
+    return users;
+  }
+
   var account = JSON.parse(localStorage.getItem('account'));
   var qrCodeButton;
   var qrCodePopup;
@@ -68,26 +85,21 @@ const queue = ({params}) => {
       <div className={styles.lineInfo}>
         <div className={styles.infos}>
           <h1 className={styles.info}>Nome della coda: {codaScelta.nome}</h1>
-          <h1 className={styles.info}>x persone in fila</h1>
-          <h1 className={styles.info}>tempo di attesa medio</h1>
+          <h1 className={styles.info}>{codaScelta.numPersone} persone in fila</h1>
+          <h1 className={styles.info}>tempo di attesa: {codaScelta.tempoMedioPersona} minuto/minuti</h1>
         </div>
         {qrCodeButton}
         {isClosed && qrCodePopup}
       </div>
       <div className={styles.items}>
-        {
-          codaScelta.listaPersone.map(
-            (idUser) => {
-              var user = mockData.find(user => user.id == idUser);
-              console.log(user);
-              return (
-                <Link href={""} className={styles.item}>
-                <div onClick={() => {setUserData({id: user.id, name: user.username, visibility:"visible"});}} className={styles.title}>{user.id} {user.username}</div>
-                </Link>
-              )
-            }
-          )
-        }
+        {usersInLine()}
+        {(localStorage.getItem('joinQueue') == codaScelta.id) ? (
+                  <Link href={""} className={styles.item}>
+                  <div onClick={() => {setUserData({id: account.id, name: account.username, surname: "cognome", visibility:"visible"});}} className={styles.title}>{account.id} {account.username}</div>
+                  </Link>
+        ) : (
+          <> </>
+        )}
       </div>
       <div style={{visibility:`${userData.visibility}`}} className={"popupContainer" + " " + styles.userPopupContainer} id="userPopupContainer">
           <h1>{userData.id}</h1>
