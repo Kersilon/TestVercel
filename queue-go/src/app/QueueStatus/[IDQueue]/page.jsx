@@ -74,6 +74,17 @@ const queue = ({params}) => {
     </div>;
   }
 
+  var buttonUtente;
+  var gobackButton;
+  
+  if((account != null ) && (account.tipo == "utente")){
+    gobackButton = <a href="/ricercaServizi"><button  className={styles.buttonJoin}>Go back</button></a>
+    buttonUtente = <button className={styles.buttonJoin} onClick={handleJoin}>Join queue</button>
+  } else {
+    gobackButton = ""
+    buttonUtente = ""
+  }
+
   var buttonCorretto;
   if((localStorage.getItem('joinQueue') == codaScelta.id)) {
     buttonCorretto = <button className={styles.buttonJoin} onClick={handleExit} >Exit queue</button>;
@@ -81,12 +92,7 @@ const queue = ({params}) => {
     buttonCorretto = <button className={styles.buttonJoin} onClick={handleJoin} >Join queue (uscendo da quella corrente)</button>;
   }
 
-  var buttonUtente;
-  if((account != null ) && (account.tipo == "utente")){
-    buttonUtente = <button className={styles.buttonJoin} onClick={handleJoin}>Join queue</button>
-  } else {
-    buttonUtente = ""
-  }
+  
 
   return (
     <div className={styles.container}>
@@ -117,7 +123,7 @@ const queue = ({params}) => {
           <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={"popupClose"}>X</h2>
       </div>
       <div className={styles.buttonContainer}>
-      <a href="/ricercaServizi"><button  className={styles.buttonJoin}>Go back</button></a>
+      {gobackButton}
         {(localStorage.getItem('joinQueue') == null) ? (
           buttonUtente
         ) : (

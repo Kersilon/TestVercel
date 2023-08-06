@@ -55,11 +55,12 @@ const Navbar = () => {
   
   }else if(account !=null && account.tipo == 'utente'){
     var button = <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button> 
-  }
-  if(localStorage.getItem('joinQueue') != null) {
-    var idScelto = localStorage.getItem('joinQueue')
-    var stringa = "/QueueStatus/" + idScelto
-    var buttonCoda = <Link key='9' href={stringa} className={styles.link}> Check Queue </Link>
+  
+    if(localStorage.getItem('joinQueue') != null) {
+      var idScelto = localStorage.getItem('joinQueue')
+      var stringa = "/QueueStatus/" + idScelto
+      var buttonCoda = <Link key='9' href={stringa} className={styles.link}> Check Queue </Link>
+    }
   }
   return (
       <div className={styles.container}>
