@@ -86,7 +86,8 @@ const queue = ({params}) => {
         <div className={styles.infos}>
           <h1 className={styles.info}>Nome della coda: {codaScelta.nome}</h1>
           <h1 className={styles.info}>{codaScelta.numPersone} persone in fila</h1>
-          <h1 className={styles.info}>tempo di attesa: {codaScelta.tempoMedioPersona} minuto/minuti</h1>
+          <h1 className={styles.info}>Tempo di attesa medio: {codaScelta.tempoMedioPersona} minuto/minuti</h1>
+          <h1 className={styles.info}>Tempo stimato di attesa: {codaScelta.tempoMedioPersona * codaScelta.numPersone} minuto/minuti</h1>
         </div>
         {qrCodeButton}
         {isClosed && qrCodePopup}
@@ -95,7 +96,7 @@ const queue = ({params}) => {
         {usersInLine()}
         {(localStorage.getItem('joinQueue') == codaScelta.id) ? (
                   <Link href={""} className={styles.item}>
-                  <div onClick={() => {setUserData({id: account.id, name: account.username, surname: "cognome", visibility:"visible"});}} className={styles.title}>{account.id} {account.username}</div>
+                  <div onClick={() => {setUserData({id: account.id, name: account.name, surname: account.surname, visibility:"visible"});}} className={styles.title}>{mockDataUsersInLine.length + 1} {account.name} {account.surname}</div>
                   </Link>
         ) : (
           <> </>

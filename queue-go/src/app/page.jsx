@@ -28,7 +28,7 @@ export default function index() {
         ind = index;
       }});
     if(ind <= mockData.length) {
-      localStorage.setItem('account', JSON.stringify(account));
+      localStorage.setItem('account', JSON.stringify(mockData[ind]));
     } else {
       console.log("account non presente");
     }

@@ -8,18 +8,34 @@ import { useRouter } from 'next/navigation'
 const registration = ({params}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [nameAcc, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [taxIDCode, setTaxIDCode] = useState("");
+  const [bussAddress, setBussAddress] = useState("");
   const account = JSON.parse(localStorage.getItem('account'));
   const router = useRouter();
   
   const payload = {
+    id: (mockData.length + 1),
     username : username,
     password : password,
+    name : nameAcc,
+    surname : surname,
+    phoneNumber : phoneNumber,
+    taxIDCode : taxIDCode,
+    bussAddress : bussAddress,
   };
 
   const setNewAccountUtente = async () => {
     const account = {
       username : username,
       password : password,
+      name : nameAcc,
+      surname : surname,
+      phoneNumber: phoneNumber,
+      taxIDCode : "",
+      bussAddress : "",
       tipo: "utente",
     };
     localStorage.setItem('account', JSON.stringify(account));
@@ -30,6 +46,11 @@ const registration = ({params}) => {
     const account = {
       username : username,
       password : password,
+      name : nameAcc,
+      surname : surname,
+      phoneNumber : "",
+      taxIDCode : taxIDCode,
+      bussAddress : bussAddress,
       tipo : "azienda",
     };
     localStorage.setItem('account', JSON.stringify(account));
@@ -51,9 +72,9 @@ const registration = ({params}) => {
                   <p> Registrazione Utente </p>
                     <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
                     <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
-                    <input type="text"  placeholder="Name"/>
-                    <input type="text"  placeholder="Surname"/>
-                    <input type="text"  placeholder="Phone number"/>
+                    <input type="text"  placeholder="Name" id="nameInput" onChange={(e) => setName(e.target.value)}/>
+                    <input type="text"  placeholder="Surname" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
+                    <input type="text"  placeholder="Phone number" id="phoneInput" onChange={(e) => setPhoneNumber(e.target.value)}/>
                     <button className='button' href="/personalArea" onClick={setNewAccountUtente}>Submit</button>
                 </form>
             </div>
@@ -66,11 +87,11 @@ const registration = ({params}) => {
             <div className={styles.formContainer}>
                 <form className={styles.form} action="">
                   <p> Registrazione Gestore </p>
-                    <input type="text"  placeholder="Username" />
-                    <input type="text"  placeholder="Password"/>
-                    <input type="text"  placeholder="Name"/>
-                    <input type="text"  placeholder="Tax ID code"/>
-                    <input type="text"  placeholder="Business address"/>
+                    <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
+                    <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
+                    <input type="text"  placeholder="Name" id="nameInput" onChange={(e) => setName(e.target.value)} />
+                    <input type="text"  placeholder="Tax ID code" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
+                    <input type="text"  placeholder="Business address" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
                     <button className='button' href="/personalArea" onClick={setNewAccountAzienda}>Submit</button>
                 </form>
             </div>
