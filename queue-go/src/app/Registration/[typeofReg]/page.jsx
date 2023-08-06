@@ -78,7 +78,9 @@ const registration = ({params}) => {
                     <button className='button' href="/personalArea" onClick={setNewAccountUtente}>Submit</button>
                 </form>
             </div>
+            <div className={styles.containerPulsanti}>
             <a className={styles.buttonReg} href="/"> Go back </a>
+            </div>
         </div>
         )   
     } else {
@@ -90,12 +92,15 @@ const registration = ({params}) => {
                     <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
                     <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
                     <input type="text"  placeholder="Name" id="nameInput" onChange={(e) => setName(e.target.value)} />
+                    <input type="text"  placeholder="Surname" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
                     <input type="text"  placeholder="Tax ID code" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
                     <input type="text"  placeholder="Business address" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
                     <button className='button' href="/personalArea" onClick={setNewAccountAzienda}>Submit</button>
                 </form>
             </div>
+            <div className={styles.containerPulsanti}>
             <a className={styles.buttonReg} href="/"> Go back </a>
+            </div>
         </div>
         ) 
     }

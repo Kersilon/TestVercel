@@ -3,6 +3,7 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from "./QueueCreate.module.css"
+import { useRouter } from 'next/navigation'
 
 export const metadata = {
   title: 'Queue Creation'
@@ -10,19 +11,22 @@ export const metadata = {
 
 
 const createQueue = () => {
+
   const [personalizedPopupIsVisible, setPersonalizedPopupIsVisible] = useState({
     visibility: "hidden"
   })
+
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
         <h1 className={styles.title}>Create queue page</h1>
         <div className={styles.buttons}>
-            <a className="button" href="/QueueStatus">create simple Queue</a>
-            <a onClick={() => {setPersonalizedPopupIsVisible({visibility:"visible"});}} className="button">create personalized Queue</a>
+            <a className="button"  href="/QueueStatus/1">Create simple Queue</a>
+            <a onClick={() => {setPersonalizedPopupIsVisible({visibility:"visible"});}} className="button">Create personalized Queue</a>
         </div>
         <div style={{visibility:`${personalizedPopupIsVisible.visibility}`}} className={"popupContainer" + " " + styles.personalizedPopupContainer}>
-          <form action="/QueueStatus">
+          <form action="/QueueStatus/1">
             <h2 className={styles.formSection}>Minimum age:</h2>
             <p>
               <label><input type="radio" name='age'/>Yes</label>
@@ -44,7 +48,7 @@ const createQueue = () => {
             </p>
             <p><label><input type="radio" name='limitOfPeople'/>No</label></p>
 
-            <input type="submit" value={"Submit"}/>
+            <input type="submit" onclick value={"Submit"}/>
           </form>
           <h2 onClick={() => {setPersonalizedPopupIsVisible({visibility:"hidden"});}} class={"popupClose"}>X</h2>
       </div>

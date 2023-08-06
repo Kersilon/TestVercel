@@ -78,7 +78,7 @@ const queue = ({params}) => {
   var gobackButton;
   
   if((account != null ) && (account.tipo == "utente")){
-    gobackButton = <a href="/ricercaServizi"><button  className={styles.buttonJoin}>Go back</button></a>
+    gobackButton = <button  href="/ricercaServizi" className={styles.buttonJoin}>Go back</button>
     buttonUtente = <button className={styles.buttonJoin} onClick={handleJoin}>Join queue</button>
   } else {
     gobackButton = ""
@@ -96,6 +96,14 @@ const queue = ({params}) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.buttonContainer}>
+      {gobackButton}
+        {(localStorage.getItem('joinQueue') == null) ? (
+          buttonUtente
+        ) : (
+          buttonCorretto
+        )}
+      </div>
       <div className={styles.lineInfo}>
         <div className={styles.infos}>
           <h1 className={styles.info}>Nome della coda: {codaScelta.nome}</h1>
@@ -121,14 +129,6 @@ const queue = ({params}) => {
           <h1>{userData.name}</h1>
           <h1>{userData.surname}</h1>
           <h2 onClick={() => {setUserData({visibility:"hidden"});}} class={"popupClose"}>X</h2>
-      </div>
-      <div className={styles.buttonContainer}>
-      {gobackButton}
-        {(localStorage.getItem('joinQueue') == null) ? (
-          buttonUtente
-        ) : (
-          buttonCorretto
-        )}
       </div>
   </div>      
   )
