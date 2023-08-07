@@ -4,9 +4,6 @@ import React, {useState, useEffect} from 'react'
 import { mockData } from "@/components/mockData";
 import { useRouter } from 'next/navigation';
 
-export const metadata = {
-  title: 'Homepage'
-}
 
 export default function index() {
   const [username, setUsername] = useState("");

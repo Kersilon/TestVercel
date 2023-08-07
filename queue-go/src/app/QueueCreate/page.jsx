@@ -5,10 +5,6 @@ import { useState } from 'react'
 import styles from "./QueueCreate.module.css"
 import { useRouter } from 'next/navigation'
 
-export const metadata = {
-  title: 'Queue Creation'
-}
-
 
 const createQueue = () => {
 

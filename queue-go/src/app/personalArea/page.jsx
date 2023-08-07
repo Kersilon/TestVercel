@@ -4,9 +4,7 @@ import styles from "./personalArea.module.css"
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-export const metadata = {
-  title: 'Personal Area'
-}
+
 
 const personalArea= () => {
   var account = JSON.parse(localStorage.getItem('account'));
