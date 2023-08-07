@@ -33,7 +33,14 @@ JS  <br/>
 React <br/>
 Node.js <br/>
 Next.js <br/>
-</p>
+
 
 **#Come utilizzarlo?**
+1. Scaricare **node.js** da https://nodejs.org/it
+2. Clonare la repository ed aprire Visual Studio Code(consigliato) o l'editor scelto
+3. Cambiare la directory a queue-go con il commando " **cd queue-go** "
+4. Nel terminal dell'editor scrivere il commando " **npm install** " per installare le dipendenze.
+5. Lanciare la web-app con il commando " **npm run dev** "
+6. Usando qualsiasi browser, andare su " **localhost:3000** "
 
+</p>
