@@ -5,7 +5,7 @@ import styles from "./paginaMobile.module.css"
 import Link from 'next/link'
 import { useState } from 'react'
 
-const paginaMobile= () => {
+const PaginaMobile= () => {
 
   const [isClosed, setIsClosed] = useState(false)
 
@@ -51,4 +51,4 @@ const paginaMobile= () => {
   )
 }
 
-export default paginaMobile
+export default PaginaMobile

@@ -5,7 +5,7 @@ import { mockData } from "@/components/mockData";
 import { useRouter } from 'next/navigation';
 
 
-export default function index() {
+export default function Index() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [tipo, setTipo] = useState("");

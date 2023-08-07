@@ -11,7 +11,7 @@ import { mockDataUsersInLine } from '@/components/mockDataUsersInLine';
 const path = "/QueueStatus/"
 
 
-const queue = ({params}) => {
+const Queue = ({params}) => {
  var codaScelta = mockDataCode.find(coda => coda.id == params.IDQueue);
 
   const handleJoin = () => {
@@ -134,4 +134,4 @@ const queue = ({params}) => {
   )
 }
 
-export default queue
+export default Queue

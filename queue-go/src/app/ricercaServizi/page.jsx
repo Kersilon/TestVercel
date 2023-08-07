@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { mockDataCode } from '@/components/mockDataCode';
 
 
-const ricercaServizi= () => {
+const RicercaServizi= () => {
   
   const [showAll, setShowAll] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,4 +49,4 @@ const ricercaServizi= () => {
 
 }
 
-export default ricercaServizi
+export default RicercaServizi

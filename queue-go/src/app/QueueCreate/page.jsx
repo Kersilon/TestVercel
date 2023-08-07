@@ -6,7 +6,7 @@ import styles from "./QueueCreate.module.css"
 import { useRouter } from 'next/navigation'
 
 
-const createQueue = () => {
+const CreateQueue = () => {
 
   const [personalizedPopupIsVisible, setPersonalizedPopupIsVisible] = useState({
     visibility: "hidden"
@@ -52,4 +52,4 @@ const createQueue = () => {
   )
 }
 
-export default createQueue
+export default CreateQueue

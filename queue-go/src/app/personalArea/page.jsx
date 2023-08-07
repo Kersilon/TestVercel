@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 
 
 
-const personalArea= () => {
+const PersonalArea= () => {
   var account = JSON.parse(localStorage.getItem('account'));
   const router = useRouter();
 
@@ -94,4 +94,4 @@ const personalArea= () => {
   )
 }}
 
-export default personalArea
+export default PersonalArea

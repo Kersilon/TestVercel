@@ -5,7 +5,7 @@ import styles from "./Registration.module.css"
 import { mockData } from "@/components/mockData";
 import { useRouter } from 'next/navigation'
 
-const registration = ({params}) => {
+const Registration = ({params}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [nameAcc, setName] = useState("");
@@ -112,4 +112,4 @@ const registration = ({params}) => {
 
 
 
-export default registration
+export default Registration
