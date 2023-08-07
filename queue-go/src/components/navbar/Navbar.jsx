@@ -33,7 +33,7 @@ const linksUnlogged = [
 
   {
     id:2,
-    title:"About",
+    title:"Chi siamo?",
     url:"/about",
   }
 ]
@@ -48,7 +48,7 @@ const Navbar = () => {
     var button = <> <Link key='11' href="/QueueStatus/1" idSceltoclassName={styles.link}> Stato della fila </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button></>
   
   }else if(account !=null && account.tipo == 'utente'){
-    var button = <> <Link key='10' href="/paginaMobile" idSceltoclassName={styles.link}> Join Queue </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button></> 
+    var button = <> <Link key='10' href="/paginaMobile" idSceltoclassName={styles.link}> Unisciti ad una fila </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button></> 
   
     if(localStorage.getItem('joinQueue') != null) {
       var idScelto = localStorage.getItem('joinQueue')

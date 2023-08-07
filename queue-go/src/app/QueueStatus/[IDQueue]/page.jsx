@@ -46,13 +46,14 @@ const queue = ({params}) => {
 
     function usersInLine(){
     var users = [];
+    var usersData = [];
 
     for (let index = 1; index <= codaScelta.listaPersone; index++) {
       var user = mockDataUsersInLine.find(user => user.id == index);
-      console.log(user);
+      usersData.push(user);
       users.push(
         <Link href={""} className={styles.item}>
-        <div onClick={() => {setUserData({id: user.id, name: user.name, surname: user.surname, visibility:"visible"});}} className={styles.title}>{user.id} {user.name} {user.surname}</div>
+        <div onClick={() => {setUserData({id: usersData.at(index-1).id, name: usersData.at(index-1).name, surname: usersData.at(index-1).surname, visibility:"visible"});}} className={styles.title}>{user.id} {user.name} {user.surname}</div>
         </Link>
       )
     }
@@ -65,7 +66,7 @@ const queue = ({params}) => {
   var qrCodePopup;
 
   if(account != null && account.tipo == 'azienda') {
-    var qrCodeButton = <button onClick={openPopup} className="button">Generate QR code</button>;
+    var qrCodeButton = <button onClick={openPopup} className="button">Ottieni codice QR</button>;
 
     var qrCodePopup = 
     <div className={"popupContainer" + " " + styles.qrPopupContainer} id="qrCodeContainer">

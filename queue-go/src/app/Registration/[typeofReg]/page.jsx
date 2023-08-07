@@ -72,14 +72,14 @@ const registration = ({params}) => {
                   <p> Registrazione Utente </p>
                     <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
                     <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
-                    <input type="text"  placeholder="Name" id="nameInput" onChange={(e) => setName(e.target.value)}/>
-                    <input type="text"  placeholder="Surname" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
-                    <input type="text"  placeholder="Phone number" id="phoneInput" onChange={(e) => setPhoneNumber(e.target.value)}/>
-                    <button className='button' href="/personalArea" onClick={setNewAccountUtente}>Submit</button>
+                    <input type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)}/>
+                    <input type="text"  placeholder="Cognome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
+                    <input type="text"  placeholder="Numero di telefono" id="phoneInput" onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <button className='button' href="/personalArea" onClick={setNewAccountUtente}>Registrati</button>
                 </form>
             </div>
             <div className={styles.containerPulsanti}>
-            <a className={styles.buttonReg} href="/"> Go back </a>
+            <a className={styles.buttonReg} href="/"> Torna indietro </a>
             </div>
         </div>
         )   
@@ -91,15 +91,15 @@ const registration = ({params}) => {
                   <p> Registrazione Gestore </p>
                     <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
                     <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
-                    <input type="text"  placeholder="Name" id="nameInput" onChange={(e) => setName(e.target.value)} />
-                    <input type="text"  placeholder="Surname" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
-                    <input type="text"  placeholder="Tax ID code" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
-                    <input type="text"  placeholder="Business address" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
-                    <button className='button' href="/personalArea" onClick={setNewAccountAzienda}>Submit</button>
+                    <input type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)} />
+                    <input type="text"  placeholder="Cognome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
+                    <input type="text"  placeholder="Codice fiscale" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
+                    <input type="text"  placeholder="Indirizzo attività" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
+                    <button className='button' href="/personalArea" onClick={setNewAccountAzienda}>Registrati</button>
                 </form>
             </div>
             <div className={styles.containerPulsanti}>
-            <a className={styles.buttonReg} href="/"> Go back </a>
+            <a className={styles.buttonReg} href="/"> Torna indietro </a>
             </div>
         </div>
         ) 
