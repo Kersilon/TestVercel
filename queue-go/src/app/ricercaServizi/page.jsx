@@ -34,7 +34,7 @@ const RicercaServizi= () => {
       </div>
       <ul className={styles.serviziList}>
       {displayedServizi.map((servizio) => (
-         <Link href={`/QueueStatus/${servizio.id}`}>
+         <Link key={servizio.id} href={`/QueueStatus/${servizio.id}`}>
           <li  className={styles.servizioItem}>
               {servizio.nome}
           </li>
