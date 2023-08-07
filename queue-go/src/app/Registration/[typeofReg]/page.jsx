@@ -93,7 +93,7 @@ const registration = ({params}) => {
                     <input className={styles.inputField} type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
                     <input className={styles.inputField} type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
                     <input className={styles.inputField} type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)} />
-                    <input className={styles.inputField} type="text"  placeholder="Cohnome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
+                    <input className={styles.inputField} type="text"  placeholder="Cognome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
                     <input className={styles.inputField} type="text"  placeholder="Codice fiscale" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
                     <input className={styles.inputField} type="text"  placeholder="Indirizzo attività" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
                     <button className={styles.submitButton} href="/personalArea" onClick={setNewAccountAzienda}>Registrati</button>
