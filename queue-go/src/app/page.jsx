@@ -62,8 +62,8 @@ export default function index() {
           <p className={styles.betweenText}><strong className={styles.boldText}>--oppure--</strong>crea un nuovo account</p>
         </div>
         <div className={styles.links}>
-            <a className="button" href="/Registration/1"><p>Standard user</p></a>
-            <a className="button" href="/Registration/2"><p>Enterprise manager</p></a>
+            <a className="button" href="/Registration/1"><p>Utente standard</p></a>
+            <a className="button" href="/Registration/2"><p>Gestore di un'attività</p></a>
         </div>
       </div>
         /*<div className={styles.container}>

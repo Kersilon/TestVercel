@@ -42,7 +42,7 @@ const ricercaServizi= () => {
         ))}
       </ul>
       {filteredServizi.length > 5 && !showAll && (
-        <button className={styles.showMore} onClick={handleShowMore}>Show more</button>
+        <button className={styles.showMore} onClick={handleShowMore}>Mostra altri risultati</button>
       )}
     </div>
   );

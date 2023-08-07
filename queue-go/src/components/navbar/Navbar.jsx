@@ -14,12 +14,12 @@ const linksAzienda = [
 
   {
     id:2,
-    title:"New Queue",
+    title:"Nuova fila",
     url:"/QueueCreate"
   },
   {
     id:3,
-    title:"About",
+    title:"Chi siamo?",
     url:"/about",
   }
 ]
@@ -33,13 +33,13 @@ const linksUnlogged = [
 
   {
     id:2,
-    title:"Join Queue",
+    title:"Unisciti ad una fila",
     url:"/paginaMobile"
   },
 
   {
     id:3,
-    title:"About",
+    title:"Chi siamo?",
     url:"/about",
   }
 ]
@@ -51,7 +51,7 @@ const Navbar = () => {
   var button = "";
   if (account != null && account.tipo == 'azienda'){
     links = linksAzienda;
-    var button = <> <Link key='11' href="/QueueStatus/1" idSceltoclassName={styles.link}> Check Queue </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button></>
+    var button = <> <Link key='11' href="/QueueStatus/1" idSceltoclassName={styles.link}> Stato della fila </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); location.reload();}} >Logout</button></>
   
   }else if(account !=null && account.tipo == 'utente'){
     var button = <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button> 
@@ -59,7 +59,7 @@ const Navbar = () => {
     if(localStorage.getItem('joinQueue') != null) {
       var idScelto = localStorage.getItem('joinQueue')
       var stringa = "/QueueStatus/" + idScelto
-      var buttonCoda = <Link key='9' href={stringa} className={styles.link}> Check Queue </Link>
+      var buttonCoda = <Link key='9' href={stringa} className={styles.link}> Stato della fila </Link>
     }
   }
   return (

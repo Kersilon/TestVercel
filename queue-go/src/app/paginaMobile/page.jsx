@@ -26,7 +26,7 @@ const paginaMobile= () => {
   return (
     <div>
         <div class={styles.centeredTitle}>
-          <h2>Join a queue</h2>
+          <h2>Unisciti ad una fila</h2>
         </div>
 
         <div class={styles.centeredContainer}>
@@ -34,14 +34,14 @@ const paginaMobile= () => {
           
           <div class={styles.centeredFunctions}>
           <Link href="/ricercaServizi"><img class={styles.imag} src="https://cdn3.iconfinder.com/data/icons/social-messaging-ui-color-line/245532/14-512.png"/></Link>  
-            <div >Search queue
+            <div >Cerca una fila
             </div>
           </div>
         
        
           <div class={styles.centeredFunctions}>
           <Link href=""> <img onClick={openPopup} class={styles.imag} src="https://www.bew-web-agency.fr/wp-content/uploads/2022/03/qr-code-g494f94760_1280.png"/> </Link>
-            <div >QR code</div>
+            <div >Codice QR</div>
             {isClosed && qrCodePopup}
           </div>
           </div>
