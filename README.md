@@ -1,7 +1,7 @@
 # Gruppo5_IUM2022-2023 - Queue&amp;Go
 
 <p align="left">
-  <img src="https://github.com/Kersilon/ProgettoIUM/blob/main/Queue%26Go%20logo%20senza%20sfondo.png"/>
+  <img  width="20%" src="https://github.com/Kersilon/ProgettoIUM/blob/main/queue-go/public/Queue&GoLogoS.png"/>
 </p>
 
 <p>
