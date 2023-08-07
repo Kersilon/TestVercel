@@ -5,6 +5,7 @@ import Logo from "/public/Queue&GoLogoS.png";
 import Image from 'next/image'
 import { mockData } from "@/components/mockData";
 import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react';
 
 const linksAzienda = [
   {
@@ -42,12 +43,17 @@ const linksUnlogged = [
 
 const Navbar = () => {
   const router = useRouter();
-  var account = JSON.parse(localStorage.getItem('account'));
+  const [account, setAccount] = useState(null);
+  
+  useEffect(() => {
+    setAccount(JSON.parse(localStorage.getItem('account')));
+  }, []);
+
   var links = linksUnlogged;
   var button = "";
   if (account != null && account.tipo == 'azienda'){
     links = linksAzienda;
-    var button = <> <Link key='11' href="/QueueStatus/1" idSceltoclassName={styles.link}> Stato della fila </Link> <button className='button' onClick={() => { localStorage.removeItem('account'); router.push('/')}} >Logout</button></>
+    var button = <> <Link key='11' href="/QueueStatus/1" idSceltoclassName={styles.link}> Stato della fila </Link> <button className='button' onClick={() => { localStorage.removeItem('account'); location.reload(); router.push('/')} } >Logout</button></>
   
   }else if(account !=null && account.tipo == 'utente'){
     var button = <> <Link key='10' href="/paginaMobile" idSceltoclassName={styles.link}> Unisciti ad una fila </Link> <button className='button'onClick={() => { localStorage.removeItem('account'); localStorage.removeItem('joinQueue'); location.reload();}} >Logout</button></> 
