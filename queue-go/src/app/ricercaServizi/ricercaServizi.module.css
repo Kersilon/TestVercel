@@ -28,7 +28,7 @@
 .servizioItem {
   margin: 11px 0;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid green;
 }
 
 .showMore {
@@ -36,8 +36,10 @@
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  border: 1px solid #ccc;
+  border: 1px solid green;
   cursor: pointer;
   font-size: 20px;
   border-radius: 25px;
+  background-color: green;
+  color:white;
 }

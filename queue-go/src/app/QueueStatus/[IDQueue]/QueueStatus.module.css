@@ -1,31 +1,15 @@
-.container{
-    display: flex;
-    flex-direction: column;
-}
-
-.lineInfo{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.lineInfo button{
-    align-self: flex-start;
-}
-
-.infos{
-    flex-grow: 1;
-    margin: 10px;
-}
-
-.info{
-    border: 5px solid green;
+.info {
+    border-radius: 10px;
+    border: 3px solid green;
     text-align: center;
+    font-weight: 550;
+    width: 100%; 
+    margin: 10px 0; 
 }
 
 .items{
     width:auto;
-    overflow-x:scroll;
+    overflow-x:auto;
     display: flex;
 }
 
@@ -70,14 +54,25 @@
     display: flex;
     justify-content: center; 
     align-items: center;    
-    height: 10vh;
+    height: 12vh;
     margin-bottom: -2%;
+}
+
+.containerInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    width: 100%; 
+    margin: 0; 
+    padding: 20px; 
 }
 
  
 .buttonJoin {
     height: 35px;
-    width: 90px;
+    width: 100px;
     margin: 0 10px;
     padding: 5px;
     cursor: pointer;
@@ -86,3 +81,4 @@
     border-radius: 5px;
     color: white;
   }
+

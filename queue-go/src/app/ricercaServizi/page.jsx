@@ -26,7 +26,7 @@ const ricercaServizi= () => {
       <div className={styles.searchContainer}>
       <input
           type="text"
-          placeholder="Search Services"
+          placeholder="Cerca attività"
           className={styles.searchBar}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -42,7 +42,7 @@ const ricercaServizi= () => {
         ))}
       </ul>
       {filteredServizi.length > 5 && !showAll && (
-        <button className={styles.showMore} onClick={handleShowMore}>Mostra altri risultati</button>
+        <button className={styles.showMore} onClick={handleShowMore}>Mostra altro</button>
       )}
     </div>
   );

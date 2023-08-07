@@ -66,41 +66,43 @@ const registration = ({params}) => {
   } else {
     if (params.typeofReg == 1) {
         return (
-        <div className={styles.container}>
-            <div className={styles.formContainer}>
-                <form className={styles.form}>
-                  <p> Registrazione Utente </p>
-                    <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
-                    <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
-                    <input type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)}/>
-                    <input type="text"  placeholder="Cognome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
-                    <input type="text"  placeholder="Numero di telefono" id="phoneInput" onChange={(e) => setPhoneNumber(e.target.value)}/>
-                    <button className='button' href="/personalArea" onClick={setNewAccountUtente}>Registrati</button>
+        <div className={styles.outerContainer}>
+            <div className={styles.cardContainer}>
+            <p className={styles.titleReg}> Registrazione Utente </p>
+                <form className={styles.formContainer}>
+                    <input className={styles.inputField} type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
+                    <input className={styles.inputField} type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
+                    <input className={styles.inputField} type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)}/>
+                    <input className={styles.inputField} type="text"  placeholder="Cognome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
+                    <input className={styles.inputField} type="text"  placeholder="Numero di telefono" id="phoneInput" onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <button className={styles.submitButton}  href="/personalArea" onClick={setNewAccountUtente}>Registrati</button>
                 </form>
-            </div>
             <div className={styles.containerPulsanti}>
-            <a className={styles.buttonReg} href="/"> Torna indietro </a>
+            <a className={styles.buttonReg} href="/"> Torna Indietro </a>
             </div>
+            </div>
+            
         </div>
         )   
     } else {
       return (
-        <div className={styles.container}>
-            <div className={styles.formContainer}>
-                <form className={styles.form} action="">
-                  <p> Registrazione Gestore </p>
-                    <input type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
-                    <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
-                    <input type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)} />
-                    <input type="text"  placeholder="Cognome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
-                    <input type="text"  placeholder="Codice fiscale" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
-                    <input type="text"  placeholder="Indirizzo attività" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
-                    <button className='button' href="/personalArea" onClick={setNewAccountAzienda}>Registrati</button>
+        <div className={styles.outerContainer}>
+            <div className={styles.cardContainer}>
+            <p className={styles.titleReg}> Registrazione Gestore </p>
+                <form className={styles.formContainer} action="">
+                    <input className={styles.inputField} type="text"  placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)} />
+                    <input className={styles.inputField} type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)} />
+                    <input className={styles.inputField} type="text"  placeholder="Nome" id="nameInput" onChange={(e) => setName(e.target.value)} />
+                    <input className={styles.inputField} type="text"  placeholder="Cohnome" id="surnameInput" onChange={(e) => setSurname(e.target.value)}/>
+                    <input className={styles.inputField} type="text"  placeholder="Codice fiscale" id="taxIDInput" onChange={(e) => setTaxIDCode(e.target.value)} />
+                    <input className={styles.inputField} type="text"  placeholder="Indirizzo attività" id="bussAddInput" onChange={(e) => setBussAddress(e.target.value)} />
+                    <button className={styles.submitButton} href="/personalArea" onClick={setNewAccountAzienda}>Registrati</button>
                 </form>
-            </div>
             <div className={styles.containerPulsanti}>
-            <a className={styles.buttonReg} href="/"> Torna indietro </a>
+            <a className={styles.buttonReg} href="/"> Torna Indietro </a>
             </div>
+            </div>
+           
         </div>
         ) 
     }

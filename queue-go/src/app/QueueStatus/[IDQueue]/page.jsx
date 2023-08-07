@@ -104,17 +104,15 @@ const queue = ({params}) => {
         ) : (
           buttonCorretto
         )}
+      {qrCodeButton}
+      {isClosed && qrCodePopup}
       </div>
-      <div className={styles.lineInfo}>
-        <div className={styles.infos}>
+      
+      <div classname={styles.containerInfo}>
           <h1 className={styles.info}>Nome della coda: {codaScelta.nome}</h1>
           <h1 className={styles.info}>{codaScelta.numPersone} persone in fila</h1>
           <h1 className={styles.info}>Tempo di attesa medio: {codaScelta.tempoMedioPersona} minuto/minuti</h1>
           <h1 className={styles.info}>Tempo stimato di attesa: {codaScelta.tempoMedioPersona * codaScelta.numPersone} minuto/minuti</h1>
-        </div>
-        {qrCodeButton}
-        {isClosed && qrCodePopup}
-      </div>
       <div className={styles.items}>
         {usersInLine()}
         {(localStorage.getItem('joinQueue') == codaScelta.id) ? (
@@ -124,6 +122,7 @@ const queue = ({params}) => {
         ) : (
           <> </>
         )}
+      </div>
       </div>
       <div style={{visibility:`${userData.visibility}`}} className={"popupContainer" + " " + styles.userPopupContainer} id="userPopupContainer">
           <h1>{userData.id}</h1>

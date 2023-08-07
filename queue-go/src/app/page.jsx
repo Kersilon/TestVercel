@@ -49,37 +49,24 @@ export default function index() {
   } else {
     return (
       <div className={styles.body}>
+        <p className={styles.welcomeTitle}> Benvenuto a Queue&Go </p>
         <div className={styles.upperHalf}>
-          <div className="formContainer">
+          <div className={styles.inputContainer}>
             <form className="form" >
-              <input type="text" placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)}/>
-              <input type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)}/>
+              <input className={styles.inputField} type="text" placeholder="Username" id="usernameInput" onChange={(e) => setUsername(e.target.value)}/>
+              <input className={styles.inputField} type="text"  placeholder="Password" id="passwordInput" onChange={(e) => setPassword(e.target.value)}/>
               <button className='button' type="submit" href="/personalArea" onClick={LoginAccount}>
                 Login
               </button>
             </form>
           </div>
-          <p className={styles.betweenText}><strong className={styles.boldText}>--oppure--</strong>crea un nuovo account</p>
+          <p className={styles.betweenText}><strong className={styles.boldText}>oppure</strong>Crea un nuovo account</p>
         </div>
         <div className={styles.links}>
             <a className="button" href="/Registration/1"><p>Utente standard</p></a>
-            <a className="button" href="/Registration/2"><p>Gestore di un'attività</p></a>
+            <a className="button" href="/Registration/2"><p>Gestore attività</p></a>
         </div>
       </div>
-        /*<div className={styles.container}>
-            <div className={styles.item}>
-              <h1 className={styles.title}>
-                Queue&Go
-              </h1>
-              <p className={styles.desc}>
-                Benvenuto nella homepage!
-              </p>
-              <Button url="/login" text="Crea una fila" />
-            </div>
-            <div className={styles.item}>
-              <Image src={Logo} alt="Logo" className={styles.img}></Image>
-            </div>
-        </div>*/
     )
     
     

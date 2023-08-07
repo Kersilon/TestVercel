@@ -1,6 +1,7 @@
 .container{
     /*border: 5px solid red;*/
     text-align: center;
+    height: 27vh;
 }
 
 .buttons{
@@ -12,9 +13,6 @@
 .buttons a{
     width: 50%;
     margin: 5px;
-}
-
-.personalizedPopupContainer{
 }
 
 .personalizedPopupContainer form{

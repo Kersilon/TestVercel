@@ -1,6 +1,4 @@
-.body{
-    /*border: 1px solid red;*/
-}
+
 
 .upperHalf{
     /*border: 1px solid green;*/
@@ -34,6 +32,14 @@
     padding: 10px;
     margin: 15px;
 }
+
+.welcomeTitle {
+    font-size: 250%;  
+    font-weight: 600;  
+    color: #ebebeb;
+    text-align: center;  
+    margin: 50px 0;  
+  }
 
 /*.container{
     display: flex;
@@ -76,3 +82,19 @@
         transform: translateY(0px) scale(1.03);
     }
 }*/
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .inputField {
+    padding: 7px 20px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+  
+}
+  

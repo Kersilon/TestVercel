@@ -65,11 +65,6 @@ const Navbar = () => {
               {link.title}
             </Link>
           ))} 
-          <div className={styles.desktopOnly}>
-            <Link href="/paginaMobile" className={styles.link}>
-                Trova servizio
-            </Link>
-          </div>
           {buttonCoda}
           {button}
           <div className={styles.navIcon}>
