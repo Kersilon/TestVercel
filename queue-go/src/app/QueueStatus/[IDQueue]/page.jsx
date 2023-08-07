@@ -79,7 +79,7 @@ const queue = ({params}) => {
   var gobackButton;
   
   if((account != null ) && (account.tipo == "utente")){
-    gobackButton = <button  href="/ricercaServizi" className={styles.buttonJoin}>Torna indietro</button>
+    gobackButton = <Link href="/ricercaServizi"><button  className={styles.buttonJoin}>Torna indietro</button></Link>
     buttonUtente = <button className={styles.buttonJoin} onClick={handleJoin}>Unisciti alla fila</button>
   } else {
     gobackButton = ""
@@ -90,7 +90,7 @@ const queue = ({params}) => {
   if((localStorage.getItem('joinQueue') == codaScelta.id)) {
     buttonCorretto = <button className={styles.buttonJoin} onClick={handleExit} >Esci dalla fila</button>;
   } else {
-    buttonCorretto = <button className={styles.buttonJoin} onClick={handleJoin} >Unisciti alla fila (uscendo da quella corrente)</button>;
+    buttonCorretto = <button className={styles.buttonJoin2} onClick={handleJoin} >Unisciti alla fila (uscendo da quella corrente)</button>;
   }
 
   
